@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 int main() {
@@ -8,13 +9,11 @@ int main() {
     cin >> n;
 
     vector<int> a(n);
-    for(int i=0; i<n; i++) cin >> a.at(i);
+    for(int i=0; i<n; i++) cin >> a[i];
 
-    for(int i=n-1; i>=0; i--){
-        cout << a.at(i);
-        if(i==0) break;
-        cout << " ";
-    }
+    reverse(a.begin(), a.end());
+
+    for(int i=0; i<n; i++) cout << (i==0?"":" ") << a[i];
 
     cout << endl;
 
